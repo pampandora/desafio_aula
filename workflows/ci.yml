@@ -1,3 +1,8 @@
+name: CI para C
+
+on:
+  push:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,16 +15,14 @@ jobs:
       run: sudo apt update && sudo apt install build-essential -y
 
     - name: Compilar programa
-      run: gcc -o teste soma.c teste.c
+      run: gcc github.c -o programa
 
-    - name: Rodar os testes
-      run: ./teste
+    - name: Executar o programa
+      run: ./programa
 
     - name: Executar testes automatizados
       run: |
         gcc -o teste teste.c
         ./teste
-
-
 
    
