@@ -13,7 +13,7 @@ jobs:
       run: gcc github.c -o programa
 
     - name: Compile soma.c com testes
-      run: gcc -o test soma.c test.c
+      run: gcc -o teste soma.c teste.c
 
     - name: Rodar os testes
       run: ./teste
