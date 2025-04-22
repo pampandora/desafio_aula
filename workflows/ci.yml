@@ -1,8 +1,3 @@
-name: CI para C
-
-on:
-  push:
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,8 +6,23 @@ jobs:
     - name: Clonar o repositório
       uses: actions/checkout@v3
 
+    - name: Instalar compilador GCC
+      run: sudo apt update && sudo apt install build-essential -y
+
+    - name: Compilar programa
+      run: gcc github.c -o programa
+
     - name: Compile soma.c com testes
       run: gcc -o test soma.c test.c
 
     - name: Rodar os testes
-      run: ./test
+      run: ./teste
+
+    - name: Executar testes automatizados
+      run: |
+        gcc -o teste teste.c
+        ./teste
+
+
+
+   
