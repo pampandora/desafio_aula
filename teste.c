@@ -2,7 +2,7 @@
 
 void testar(){
   //função de teste simples
-  printf("Alteração de código testada com sucesso!\n");
+  printf("o codigo funciona\n");
 }
 
 int main(){
