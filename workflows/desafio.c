@@ -1,31 +1,24 @@
 #include <stdio.h>
 
+int soma(int a, int b) {
+    return a + b;
+}
+
 int main() {
-    // Declaração das variáveis
-    float A, B, C, soma;
+    int resultado;
 
-    // Leitura dos valores A, B e C
-    printf("Digite o valor de A: ");
-    scanf("%f", &A);
+    resultado = soma(2, 3);
+    printf("A soma é: %d\n", resultado);
 
-    printf("Digite o valor de B: ");
-    scanf("%f", &B);
+    resultado = soma(0, 0);
+    printf("A soma é: %d\n", resultado);
 
-    printf("Digite o valor de C: ");
-    scanf("%f", &C);
+    resultado = soma(-5, 5);
+    printf("A soma é: %d\n", resultado);
 
-    // Calculando a soma entre A e B
-    soma = A + B;
-
-    // Imprimindo a soma
-    printf("A soma entre A e B é: %.2f\n", soma);
-
-    // Verificando se a soma é menor que C
-    if (soma < C) {
-        printf("A soma é menor que C.\n");
-    } else {
-        printf("A soma não é menor que C.\n");
-    }
+    resultado = soma(10, -3);
+    printf("A soma é: %d\n", resultado);
 
     return 0;
 }
+
