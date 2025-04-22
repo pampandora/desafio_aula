@@ -1,24 +1,18 @@
-#include <stdio.h>
+name: CI para C
 
-int soma(int a, int b) {
-    return a + b;
-}
+on:
+  push:
 
-int main() {
-    int resultado;
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-    resultado = soma(2, 3);
-    printf("A soma é: %d\n", resultado);
+    steps:
+    - name: Clonar o repositório
+      uses: actions/checkout@v3
 
-    resultado = soma(0, 0);
-    printf("A soma é: %d\n", resultado);
+    - name: Compile soma.c com testes
+      run: gcc -o test soma.c test.c
 
-    resultado = soma(-5, 5);
-    printf("A soma é: %d\n", resultado);
-
-    resultado = soma(10, -3);
-    printf("A soma é: %d\n", resultado);
-
-    return 0;
-}
-
+    - name: Rodar os testes
+      run: ./test
